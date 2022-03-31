@@ -1,0 +1,15 @@
+SELECT expenses.userID, expenses.expensesID, expenses.amount, expenses.date, payment.payment, category.category, expenses.comment FROM expenses, payment, category WHERE expenses.categoryID = category.categoryID AND expenses.userID=1 AND expenses.paymentID = payment.paymentID ORDER BY expenses.userID ASC
+
+/*
+1. Wyświetlenie wszystkich wyników.
+SELECT * FROM expenses ORDER BY userID ASC
+
+2. Wyświetlenie wszystkich wyników (rozubudowana wersja)
+SELECT expenses.userID, expenses.expensesID, expenses.amount, expenses.date, payment.payment, category.category, expenses.comment FROM expenses, payment, category WHERE expenses.categoryID = category.categoryID AND expenses.paymentID = payment.paymentID ORDER BY expenses.userID ASC
+
+3. Wyświetlenie wyników dla userID=1
+SELECT expenses.userID, expenses.expensesID, expenses.amount, expenses.date, payment.payment, category.category, expenses.comment FROM expenses, payment, category WHERE expenses.categoryID = category.categoryID AND expenses.userID=1 AND expenses.paymentID = payment.paymentID ORDER BY expenses.userID ASC
+
+4. Wyświetlenie wyników dla userID=1 i daty 2022-03
+SELECT expenses.userID, expenses.expensesID, expenses.amount, expenses.date, payment.payment, category.category, expenses.comment FROM expenses, payment, category WHERE expenses.categoryID = category.categoryID AND expenses.userID=1 AND expenses.date LIKE "2022-03%" AND expenses.paymentID = payment.paymentID ORDER BY expenses.userID ASC
+*/
